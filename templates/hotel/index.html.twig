@@ -1,20 +1,96 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HotelController!{% endblock %}
+{% block title %}Hello HotelController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/cours/symfony/hotel/src/Controller/HotelController.php'|file_link(0) }}">src/Controller/HotelController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/cours/symfony/hotel/templates/hotel/index.html.twig'|file_link(0) }}">templates/hotel/index.html.twig</a></code></li>
-    </ul>
-</div>
+	<!-- Header-->
+	<header class="py-5">
+		<div class="container px-5">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 col-xxl-6">
+					<div class="text-center my-5">
+						<h1 class="fw-bolder mb-3">À propos de notre hôtel</h1>
+						<p class="lead fw-normal text-muted mb-4">Bienvenue sur la page "À propos" de notre hôtel. Nous sommes ravis de vous présenter notre établissement.</p>
+						<a class="btn btn-primary btn-lg" href="#scroll-target">Notre histoire</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- About section one--> 
+	<section class="py-5 bg-light" id="scroll-target">
+		<div class="container px-5 my-5">
+			<div class="row gx-5 align-items-center">
+				<div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="hotel.jpg" alt="..."/></div>
+				<div class="col-lg-6">
+					<h2 class="fw-bolder">Notre histoire</h2>
+					<p class="lead fw-normal text-muted mb-0">Depuis notre ouverture il y a plusieurs années, nous nous efforçons de fournir une expérience d'hébergement de qualité à nos clients. Notre hôtel est situé dans un emplacement privilégié, offrant une vue imprenable sur la mer et un accès facile aux attractions locales.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About section two-->
+	<section class="py-5">
+		<div class="container px-5 my-5">
+			<div class="row gx-5 align-items-center">
+				<div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."/></div>
+				<div class="col-lg-6">
+					<h2 class="fw-bolder">Nos services</h2>
+					<p class="lead fw-normal text-muted mb-0">Nous proposons une large gamme de services pour rendre votre séjour agréable et confortable. Nos chambres sont élégamment décorées et équipées de tout le confort moderne. Notre personnel attentionné est disponible 24h/24 pour répondre à vos besoins. Profitez également de notre restaurant proposant une cuisine délicieuse, de notre centre de remise en forme moderne et de notre piscine rafraîchissante.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+    <!-- About section three -->
+    <section class="py-5 bg-light" id="scroll-target">
+		<div class="container px-5 my-5">
+			<div class="row gx-5 align-items-center">
+				<div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."/></div>
+				<div class="col-lg-6">
+					<h2 class="fw-bolder">Notre engagement</h2>
+					<p class="lead fw-normal text-muted mb-0">La satisfaction de nos clients est notre priorité absolue. Nous nous efforçons constamment d'améliorer nos services et d'offrir une expérience inoubliable à chacun de nos visiteurs. Notre équipe dévouée est à votre disposition pour vous assister dans vos demandes et s'assurer que vous passez un séjour exceptionnel chez nous.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Team members section-->
+	<section class="py-5 bg-light">
+		<div class="container px-5 my-5">
+			<div class="text-center">
+				<h2 class="fw-bolder">Notre équipe</h2>
+				<p class="lead fw-normal text-muted mb-5">Dédiée à la qualité et au confort</p>
+			</div>
+			<div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+				<div class="col mb-5 mb-5 mb-xl-0">
+					<div class="text-center">
+						<img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..."/>
+						<h5 class="fw-bolder">Claude Roméo</h5>
+						<div class="fst-italic text-muted">Founder &amp; CEO</div>
+					</div>
+				</div>
+				<div class="col mb-5 mb-5 mb-xl-0">
+					<div class="text-center">
+						<img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..."/>
+						<h5 class="fw-bolder">Franck Rodrigue</h5>
+						<div class="fst-italic text-muted">CFO</div>
+					</div>
+				</div>
+				<div class="col mb-5 mb-5 mb-sm-0">
+					<div class="text-center">
+						<img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..."/>
+						<h5 class="fw-bolder">Evariste Nguessan</h5>
+						<div class="fst-italic text-muted">Operations Manager</div>
+					</div>
+				</div>
+				<div class="col mb-5">
+					<div class="text-center">
+						<img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..."/>
+						<h5 class="fw-bolder">Christ Léon</h5>
+						<div class="fst-italic text-muted">CTO</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}
