@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ServicesController!
+{% endblock %}
+
+{% block body %}
+	<!-- Blog preview section-->
+	<section class="py-5">
+		<div class="container px-5 my-5">
+
+			<div class="row gx-5 justify-content-center">
+				<div class="col-lg-8 col-xl-6">
+					<div class="text-center">
+						<h2 class="fw-bolder">Réserver votre chambre</h2>
+						<p class="lead fw-normal text-muted mb-5">Hotel.com met 331 chambres à la disposition des voyageurs d’affaires ou de loisir avec accès Wi-Fi gratuit et nécessaire à thé et à café en chambre.</p>
+					</div>
+				</div>
+			</div>
+			<form action="" method="post">
+				<div class="row gx-5">
+
+					{% for chambre in chambres|slice(0, 3) %}
+
+						<div class="col-lg-4 mb-5">
+							<div class="card h-100 shadow border-0">
+								<img class="card-img-top" src="{{ asset('uploads/images/' ~ chambre.photo) }}" alt="..."/>
+								<div class="card-body p-4">
+
+									<a class="text-decoration-none link-dark stretched-link" href="#!">
+										<h5 class="card-title mb-3">{{ chambre.titre }}</h5>
+									</a>
+									<p class="card-text mb-0" style="font-size: 12px;">{{ chambre.descriptionCourte }}</p><br>
+									<p class="card-text mb-0">{{ chambre.descriptionLongue }}</p><br>
+									<div class="text-center">
+										<a name="" id="" class="btn btn-primary" href="{{ path('app_cart') }}" role="button">Réserver</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					{% endfor %}
+
+				</div>
+			</form>
+		</div>
+	</section>
+{% endblock %}

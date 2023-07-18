@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class SpaController extends AbstractController
+class PageController extends AbstractController
 {
-    #[Route('/spa', name: 'app_spa')]
+    #[Route('/', name: 'app_pages')]
     public function index(): Response
     {
-        return $this->render('spa/index.html.twig', [
-            'controller_name' => 'SpaController',
+        return $this->render('pages/accueil.html.twig', [
+            'controller_name' => 'HomeController',
         ]);
     }
 }
