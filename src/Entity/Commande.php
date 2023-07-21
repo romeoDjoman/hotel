@@ -42,6 +42,14 @@ class Commande
     #[ORM\JoinColumn(nullable: false)]
     private ?Chambre $chambre = null;
 
+    #[ORM\ManyToOne(inversedBy: 'commandes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Restaurant $restaurant = null;
+
+    #[ORM\ManyToOne(inversedBy: 'commandes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Spa $spa = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -151,6 +159,30 @@ class Commande
     public function setChambre(?Chambre $chambre): static
     {
         $this->chambre = $chambre;
+
+        return $this;
+    }
+
+    public function getRestaurant(): ?Restaurant
+    {
+        return $this->restaurant;
+    }
+
+    public function setRestaurant(?Restaurant $restaurant): static
+    {
+        $this->restaurant = $restaurant;
+
+        return $this;
+    }
+
+    public function getSpa(): ?Spa
+    {
+        return $this->spa;
+    }
+
+    public function setSpa(?Spa $spa): static
+    {
+        $this->spa = $spa;
 
         return $this;
     }

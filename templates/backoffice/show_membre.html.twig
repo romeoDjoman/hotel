@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Membres
+{% endblock %}
+
+{% block body %}
+
+
+	{# Afficher le formulaire #}
+	{# {{ form_start(registrationForm) }}
+									{{ form_widget(registrationForm) }}
+									{{ form_end(registrationForm) }} #}
+
+	{# Afficher la table des membres enregistrés #}
+		{% if membres is not empty %}
+			<section class="py-5"> <div
+				class="container px-5 my-5">
+				<!-- Call to action-->
+				<aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+					<div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+						<div class="mb-4 mb-xl-0">
+							<div class="fs-3 fw-bold text-white">Newsletter.</div>
+							<div class="text-white-50">Inscrivez-vous à notre newsletter pour les dernières actualités</div>
+						</div>
+						<div class="ms-xl-4">
+							<div class="input-group mb-2">
+								<input class="form-control" type="text" placeholder="Email address..." aria-label="Email address..." aria-describedby="button-newsletter"/>
+								<button class="btn btn-outline-light" id="button-newsletter" type="button">S'inscrire</button>
+							</div>
+							<div class="small text-white-50">Nous attachons de l'importance à la confidentialité.</div>
+						</div>
+					</div>
+				</aside>
+				<br><br>
+				<div class="container ">
+					<h1 class="h3 mb-2 text-gray-800 text-center">Membres</h1>
+					<p class="mb-4 text-center">Retrouvez dans ce tableau la liste de tous les membres en charges des réservations de l'hotel
+
+
+						<!-- DataTales Example -->
+						<div class="card shadow mb-4">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">Lites des membres au poste de gestionnaire de l'hotel</h6>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+										<thead>
+											<tr>
+												<th>Id</th>
+												<th>Email</th>
+												<th>Pseudo</th>
+												<th>Nom</th>
+												<th>Prénom</th>
+												<th>Civilité</th>
+												<th>Date</th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+
+										<tbody>
+											{% for membre in membres %}
+												<tr>
+													<td>{{ membre.id }}</td>
+													<td>{{ membre.email }}</td>
+													<td>{{ membre.pseudo }}</td>
+													<td>{{ membre.nom }}</td>
+													<td>{{ membre.prenom }}</td>
+													<td>{{ membre.civilite }}</td>
+													<td>{{ membre.dateEnregistrement ? membre.dateEnregistrement|date('d/m/Y H:i:s') : 'N/A' }}</td>
+													<td>
+														<a href=" {{ path('ajouter_membre') }} " class="btn btn-success">
+															<i class="fa-solid fa-circle-plus"></i>
+														</a>
+														<a href="{{ path('modifier_membre', { 'id': membre.id }) }}" class="btn btn-warning">
+															<i class="fas fa-edit"></i>
+														</a>
+														<a href="{{ path('supprimer_membre', { 'id': membre.id }) }}" class="btn btn-danger">
+															<i class="fas fa-trash"></i>
+														</a>
+													</td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</p>
+				</div>
+			{% else %}
+				<p>Aucun membre enregistré.</p>
+			{% endif %}
+		</div>
+	</section>
+
+{% endblock %}

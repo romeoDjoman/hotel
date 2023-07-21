@@ -87,8 +87,6 @@ Définissez les entités nécessaires pour votre application :
     ``symfony console make:registration-form``
 
 
-
-
 - Définissez les routes correspondantes dans le fichier `routes.yaml`. Par exemple, dans le fichier `config/routes.yaml` :
   ```yaml
   liste_hotels:
