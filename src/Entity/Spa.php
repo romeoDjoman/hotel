@@ -28,6 +28,9 @@ class Spa
     #[ORM\Column(length: 255)]
     private ?string $duree = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $prix = null;
+
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date_enregistrement = null;
 
@@ -88,6 +91,18 @@ class Spa
     public function setDuree(string $duree): static
     {
         $this->duree = $duree;
+
+        return $this;
+    }
+
+    public function getPrix(): ?string
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(string $prix): static
+    {
+        $this->prix = $prix;
 
         return $this;
     }

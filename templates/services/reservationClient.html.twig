@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de réservation
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container h-100">
+	<div class="row d-flex justify-content-center align-items-center h-100">
+		<div class="col-lg-12 col-xl-11">
+			<div class="text-black" style="border-radius: 25px;">
+				<div class="card-body p-md-5">
+					<div class="row justify-content-center">
+						<div class="col-md-10 order-2 order-lg-1">
+							<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Réserver un hôtel</p>
+
+							<form
+								class="mx-1 mx-md-4">
+
+								<!-- First row of form fields -->
+								<div class="row">
+									<div class="col-md-6">
+										<label for="form-date-arrivee" class="mx-5">Date d'arrivée</label><br>
+										<div class="d-flex flex-row align-items-center mb-4">
+											<i class="fas fa-calendar fa-lg me-3 fa-fw"></i>
+											{{ form_widget(form.date_arrivee, { 'attr': {'class': 'form-control', 'placeholder': 'Date d\'arrivée'} }) }}
+                     					</div>
+                     				</div>
+									<div class="col-md-6">
+										<label for="form-date-arrivee" class="mx-5">Date de sortie</label>
+										<div class="d-flex flex-row align-items-center mb-4">
+										
+											<i class="fas fa-calendar fa-lg me-3 fa-fw"></i>
+											{{ form_widget(form.date_depart, { 'attr': {'class': 'form-control', 'placeholder': 'Date de départ'} }) }}
+										</div>
+									</div>
+								</div>
+
+								<!-- Second row of form fields -->
+								<div class="row">
+									<div class="col-md-6">
+										<div class="d-flex flex-row align-items-center mb-4">
+											<i class="fas fa-user fa-lg me-3 fa-fw"></i>
+											{{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder': 'Nom'} }) }}
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="d-flex flex-row align-items-center mb-4">
+										<i class="fas fa-user fa-lg me-3 fa-fw"></i>
+										{{ form_widget(form.prenom, { 'attr': {'class': 'form-control', 'placeholder': 'Prénom'} }) }}
+										</div>
+									</div>
+								</div>
+
+							<!-- Third row of form fields -->
+							<div class="row">
+								<div class="col-md-6">
+								<div class="d-flex flex-row align-items-center mb-4">
+									<i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+									{{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Email'} }) }}
+								</div>
+								</div>
+							
+								<div class="col-md-6">
+								<div class="d-flex flex-row align-items-center mb-4">
+									<i class="fas fa-phone fa-lg me-3 fa-fw"></i>
+									{{ form_widget(form.telephone, { 'attr': {'class': 'form-control', 'placeholder': 'Téléphone'} }) }}
+								</div>
+								</div>
+							</div>
+
+							<!-- Fourth row of form fields -->
+							<div class="row">
+								<div class="col-md-6">
+								<div class="d-flex flex-row align-items-center mb-4">
+									<i class="fas fa-bed fa-lg me-3 fa-fw"></i>
+									{{ form_widget(form.chambre, { 'attr': {'class': 'form-control', 'placeholder': 'Chambre'} }) }}
+								</div>
+								</div>
+								<div class="col-md-6">
+								<div class="d-flex flex-row align-items-center mb-4">
+									<i class="fas fa-utensils fa-lg me-3 fa-fw"></i>
+									{{ form_widget(form.restaurant, { 'attr': {'class': 'form-control', 'placeholder': 'Restaurant'} }) }}
+								</div>
+								</div>
+							</div>
+
+							<!-- Fifth row of form fields -->
+							<div class="row">
+								<div class="col-md-6">
+								<div class="d-flex flex-row align-items-center mb-4">
+									<i class="fas fa-spa fa-lg me-3 fa-fw"></i>
+									{{ form_widget(form.spa, { 'attr': {'class': 'form-control', 'placeholder': 'Spa'} }) }}
+								</div>
+								</div>
+							</div>
+
+							<!-- Checkbox and button -->
+							<div class="form-check d-flex justify-content-center mb-5">
+								<input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+								<label class="form-check-label" for="form2Example3">
+								J'accepte toutes les déclarations dans <a href="#!">Conditions d'utilisation</a>
+								</label>
+							</div>
+
+							<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+								<button type="submit" class="btn btn-primary btn-lg">Réserver</button>
+							</div>
+
+						</form>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			</div>
+		</section>
+
+{% endblock %}
